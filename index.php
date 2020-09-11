@@ -2,8 +2,8 @@
 	if(!empty($_FILES["upload"]["tmp_name"])){
 		$uploadDir = "uploads/";
 		$fileName = $_FILES["upload"]["name"];
-		$newName = $_SERVER["Document_Root"] . $uploadDir . $fileName;
-		$encodedName = $_SERVER["Document_Root"] . $uploadDir . rawurlencode($fileName);
+		$newName = $uploadDir . $fileName;
+		$encodedName = $uploadDir . rawurlencode($fileName);
 		$file = $_FILES["upload"]["tmp_name"];
 		if(move_uploaded_file($file, $uploadDir . $fileName)){
 			$uploadResponse = "File uploaded Successfully to: <a href=\"$encodedName\">$newName</a>";
