@@ -12,12 +12,18 @@
 			$uploadResponse = "File upload failed";
 		}
 	}
+	if(PHP_OS == "WINNT"){
+		$os = "Windows";
+	}
+	else{
+		$os = PHP_OS;
+	}
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo PHP_OS;?> Uploads</title>
+		<title><?php echo $os;?> Uploads</title>
 		<meta charset="utf-8">
 		<link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
 		<link type="text/css" rel="stylesheet" href="style.php"?>

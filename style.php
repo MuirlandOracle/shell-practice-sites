@@ -1,4 +1,14 @@
-<?php header("Content-type: text/css; charset: UTF-8"); ?>
+<?php header("Content-type: text/css; charset: UTF-8");
+
+if(PHP_OS == "WINNT"){
+		$os = "Windows";
+	}
+	else{
+		$os = PHP_OS;
+	}
+
+?>
+
 @font-face{                                              
     font-family: pompiere;                               
     src: url("Pompiere-Regular.otf");                    
@@ -9,7 +19,7 @@ body,html{
     overflow: hidden;                                    
 }                                                        
 body{                                                    
-    background: url("<?php echo strtolower(PHP_OS);?>.png") center center no-repeat;
+    background: url("<?php echo strtolower($os);?>.png") center center no-repeat;
     background-size: 30%;                                
 }                                                        
 body, html, button, input[type="submit"]{                
